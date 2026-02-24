@@ -69,12 +69,31 @@
 </head>
 
 <body>
+
+
     <div class="container">
         <h1>AppSwitcher 隱私政策與資料刪除指南</h1>
         <p class="last-updated">最後更新日期：2026年2月24日</p>
 
-        <p>歡迎使用 AppSwitcher（以下簡稱「本應用」）。本應用由
-            [您的姓名或公司名稱]（以下簡稱「我們」）開發，提供快速切換應用程式的懸浮視窗功能。我們非常重視您的隱私，並希望透過本文件清楚說明我們如何收集、使用及保護您的資料。</p>
+        <div class="language-switcher">
+            <a href="#zh">繁體中文</a> | <a href="#en">English</a>
+        </div>
+        <div id="zh" class="lang-zh">（繁體中文內容）</div>
+        <div id="en" class="lang-en" style="display:none;">（English content）</div>
+        <script>
+            // 简单的显示切换
+            const hash = window.location.hash;
+            if (hash === '#en') {
+                document.querySelector('.lang-zh').style.display = 'none';
+                document.querySelector('.lang-en').style.display = 'block';
+            } else {
+                document.querySelector('.lang-zh').style.display = 'block';
+                document.querySelector('.lang-en').style.display = 'none';
+            }
+        </script>
+
+        <p>歡迎使用 轉App快 （AppSwitcher）（以下簡稱「本應用」）。本應用由L'Sky
+            以下簡稱「我們」）開發，提供快速切換應用程式的懸浮視窗功能。我們非常重視您的隱私，並希望透過本文件清楚說明我們如何收集、使用及保護您的資料。</p>
 
         <h2>1. 我們收集的資訊</h2>
         <h3>1.1 您主動提供的資訊</h3>
@@ -116,7 +135,7 @@
         <p>我們僅在以下情況與第三方共享您的資訊：</p>
         <ul>
             <li><strong>Google</strong>：透過 Google Play 計費服務及 Firebase Crashlytics 與 Google 共享必要資訊（如購買憑證、崩潰日誌）。</li>
-            <li><strong>自有伺服器</strong>：訂閱驗證請求和錯誤日誌會傳輸至我們自己的伺服器（位於 [您伺服器所在地區，例如「台灣」]），僅用於上述目的。</li>
+            <li><strong>自有伺服器</strong>：訂閱驗證請求和錯誤日誌會傳輸至我們自己的伺服器（位於香港），僅用於上述目的。</li>
             <li><strong>法律要求</strong>：如有法律規定或政府機關合法要求，我們可能揭露必要資訊。</li>
         </ul>
         <p>我們不會將您的個人資訊出售、出租或交易給任何第三方用於行銷目的。</p>
@@ -179,9 +198,10 @@
         <h2>聯絡我們</h2>
         <p>如果您對本隱私政策或資料處理有任何疑問，歡迎透過以下方式與我們聯繫：</p>
         <ul>
-            <li><strong>電子郵件：project01hk@gmail.com</strong><span class="email">
+            <li><strong>電子郵件：project01hk@gmail.com</strong>></li>
+        </ul>
 
-                    <p style="margin-top: 40px; font-size: 0.9em; color: #777;">© 2026 AppSwitcher. 保留一切權利。</p>
+        <p style="margin-top: 40px; font-size: 0.9em; color: #777;">© 2026 AppSwitcher. 保留一切權利。</p>
     </div>
 </body>
 
