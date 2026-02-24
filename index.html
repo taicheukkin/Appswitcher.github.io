@@ -65,143 +65,339 @@
             background: #ddd;
             margin: 30px 0;
         }
+
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .language-switcher a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .language-switcher a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
-
-
     <div class="container">
-        <h1>AppSwitcher 隱私政策與資料刪除指南</h1>
-        <p class="last-updated">最後更新日期：2026年2月24日</p>
-
         <div class="language-switcher">
             <a href="#zh">繁體中文</a> | <a href="#en">English</a>
         </div>
-        <div id="zh" class="lang-zh">（繁體中文內容）</div>
-        <div id="en" class="lang-en" style="display:none;">（English content）</div>
+
+        <!-- 繁體中文內容區塊 -->
+        <div id="zh" class="lang-zh">
+            <h1>AppSwitcher 隱私政策與資料刪除指南</h1>
+            <p class="last-updated">最後更新日期：2026年2月24日</p>
+
+            <p>歡迎使用 轉App快 （AppSwitcher）（以下簡稱「本應用」）。本應用由L'Sky
+                以下簡稱「我們」）開發，提供快速切換應用程式的懸浮視窗功能。我們非常重視您的隱私，並希望透過本文件清楚說明我們如何收集、使用及保護您的資料。</p>
+
+            <h2>1. 我們收集的資訊</h2>
+            <h3>1.1 您主動提供的資訊</h3>
+            <ul>
+                <li><strong>購買憑證</strong>：當您透過 Google Play 訂閱本應用時，我們會處理由 Google Play 提供的購買權杖（purchase token）、訂單編號及商品
+                    ID，以驗證訂閱有效性及到期日。我們不會儲存您的信用卡或付款卡資訊。</li>
+                <li><strong>混淆使用者 ID</strong>：為識別您的訂閱狀態，我們會在本機產生一個經 SHA-256 處理的匿名混淆 ID（obfuscatedAccountId），此 ID
+                    與您裝置相關，但無法反向識別您的個人身份。該 ID 會傳送至我們的伺服器，用於關聯訂閱記錄。</li>
+            </ul>
+
+            <h3>1.2 自動收集的資訊</h3>
+            <ul>
+                <li><strong>應用列表</strong>：為讓您選擇要快速切換的應用程式，我們會在您授權後讀取您裝置上已安裝的應用程式清單（包括應用名稱和套件名稱）。此資料僅儲存於本機，不會上傳至伺服器。</li>
+                <li><strong>崩潰日誌與診斷資訊</strong>：當應用程式發生錯誤或崩潰時，我們透過 <strong>Firebase Crashlytics</strong>
+                    收集裝置型號、作業系統版本、應用版本、錯誤堆疊及崩潰時間。這些資訊用於協助我們修復問題及改善穩定性。</li>
+                <li><strong>自訂錯誤事件</strong>：部分關鍵業務錯誤（如訂閱驗證失敗）會透過我們自己的 <strong>ErrorReporter</strong>
+                    模組上報至我們的伺服器，包含錯誤代碼、訊息及裝置基本資訊（如 Android 版本），以利監控服務健康度。</li>
+                <li><strong>網路狀態</strong>：Firebase Crashlytics 可能收集連線類型（Wi-Fi/行動網路）以分析崩潰情境。</li>
+            </ul>
+
+            <h3>1.3 第三方 SDK 收集的資訊</h3>
+            <ul>
+                <li><strong>Google Play Billing Library</strong>：用於處理訂閱購買，會收集購買權杖、訂單 ID 及訂閱狀態。詳細資料處理請參閱 <a
+                        href="https://policies.google.com/privacy" target="_blank">Google 隱私權政策</a>。</li>
+                <li><strong>Firebase Crashlytics</strong>：用於崩潰報告，可能收集裝置標識符（如 Android ID）、崩潰日誌及診斷資訊。詳情請見 <a
+                        href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隱私權政策</a>。</li>
+                <li><strong>OkHttp / Retrofit</strong>：用於與我們的伺服器通訊，傳輸訂閱驗證、錯誤日誌等資料，所有連線均使用 HTTPS 加密。</li>
+            </ul>
+
+            <h2>2. 資訊使用目的</h2>
+            <ul>
+                <li>提供核心功能：根據您選擇的應用程式清單，在懸浮視窗中快速切換。</li>
+                <li>處理訂閱：驗證購買、管理訂閱狀態（包含 18 天免費試用）、防止欺詐。</li>
+                <li>改善應用：分析崩潰與錯誤，優化使用者體驗。</li>
+                <li>客戶支援：如果您透過電子郵件與我們聯絡，我們可能使用您提供的資訊協助解決問題。</li>
+            </ul>
+
+            <h2>3. 資訊共享</h2>
+            <p>我們僅在以下情況與第三方共享您的資訊：</p>
+            <ul>
+                <li><strong>Google</strong>：透過 Google Play 計費服務及 Firebase Crashlytics 與 Google 共享必要資訊（如購買憑證、崩潰日誌）。</li>
+                <li><strong>自有伺服器</strong>：訂閱驗證請求和錯誤日誌會傳輸至我們自己的伺服器（位於香港），僅用於上述目的。</li>
+                <li><strong>法律要求</strong>：如有法律規定或政府機關合法要求，我們可能揭露必要資訊。</li>
+            </ul>
+            <p>我們不會將您的個人資訊出售、出租或交易給任何第三方用於行銷目的。</p>
+
+            <h2>4. 資料保留</h2>
+            <ul>
+                <li><strong>本機儲存資料</strong>：您選擇的應用程式清單、設定偏好僅儲存在您的裝置上。您可以透過清除應用程式資料或解除安裝來刪除這些資訊。</li>
+                <li><strong>伺服器訂閱記錄</strong>：與您的混淆 ID 關聯的訂閱狀態（如購買權杖、到期日、訂閱狀態）會在您持續訂閱期間保留。若您取消訂閱或要求刪除，我們將於 30
+                    天內刪除或匿名化這些記錄，但為符合稅務及反欺詐要求，交易記錄（如訂單編號）可能需保留 5 年，且不再用於任何其他目的。</li>
+                <li><strong>崩潰日誌</strong>：透過 Firebase Crashlytics 收集的日誌將於 90 天後自動刪除。我們自有伺服器的錯誤日誌亦保留 90 天後匿名化。</li>
+            </ul>
+
+            <h2>5. 您的權利</h2>
+            <ul>
+                <li><strong>存取與刪除</strong>：您可以隨時透過下方電子郵件要求查閱或刪除我們伺服器上與您相關的個人資料（如混淆 ID 及訂閱記錄）。請注意，我們可能因法律義務保留特定交易記錄。</li>
+                <li><strong>管理權限</strong>：您可以透過裝置的「設定」→「應用程式」→「AppSwitcher」→「權限」來管理懸浮視窗、應用程式列表等權限。</li>
+                <li><strong>停止使用</strong>：您可以透過解除安裝應用程式停止所有資料收集。解除安裝後，本機資料將被移除，但伺服器上的資料將依上述保留政策處理，除非您另行提出刪除請求。</li>
+            </ul>
+
+            <h2>6. 兒童隱私</h2>
+            <p>本應用不適用於未滿 13 歲之兒童，我們也不會蓄意收集兒童的個人資料。若我們發現誤收集兒童資訊，將立即刪除。</p>
+
+            <h2>7. 隱私政策更新</h2>
+            <p>我們可能會不時更新本隱私政策。重大變更時，我們會透過應用程式內通知或新版發布時提醒您。建議您定期查閱本頁面以瞭解最新內容。</p>
+
+            <hr>
+
+            <h1 id="data-deletion">資料刪除請求指南</h1>
+            <p>根據適用法律（如 GDPR、CCPA），您有權要求刪除我們儲存的與您相關的個人資料。由於本應用不提供傳統的使用者帳戶登入，請依下列步驟提出請求：</p>
+
+            <h2>步驟 1：準備資訊</h2>
+            <p>為協助我們快速定位您的資料，請準備以下資訊（如有）：</p>
+            <ul>
+                <li><strong>混淆使用者 ID</strong>：此 ID 由應用自動產生並儲存於本機。您可透過聯絡我們，我們將引導您取得該 ID（通常在應用程式內部日誌或透過除錯方式）。</li>
+                <li><strong>您首次使用本應用的大致日期</strong>（例如月份與年份）</li>
+                <li><strong>您最後一次訂閱或使用應用的時間</strong>（選擇性，但有助於加速處理）</li>
+            </ul>
+
+            <h2>步驟 2：發送電子郵件</h2>
+            <p>請將上述資訊寄至以下信箱：</p>
+            <p class="email">📧 project01hk@gmail.com</p>
+            <p>郵件主旨請註明 <strong>「資料刪除請求 - AppSwitcher」</strong>，並在內文中清楚說明您希望刪除個人資料。</p>
+
+            <h2>步驟 3：處理時程</h2>
+            <p>我們將在收到請求後的 <strong>30 天內</strong>處理您的請求，並透過電子郵件回覆確認刪除結果。若需延長處理時間（例如因請求複雜），我們會主動通知您。</p>
+
+            <h2>資料刪除範圍與例外</h2>
+            <p>我們將刪除以下與您相關的資料：</p>
+            <ul>
+                <li>混淆使用者 ID 及其關聯的訂閱狀態（包括有效/過期/試用記錄）</li>
+                <li>儲存在我們伺服器上的錯誤日誌（如有您特定 ID 的記錄）</li>
+            </ul>
+            <p>但請注意，下列資料可能因法律或合規原因無法立即刪除：</p>
+            <ul>
+                <li><strong>交易記錄</strong>：為符合稅務及反欺詐要求，與 Google Play 結算相關的購買權杖、訂單編號及交易時間可能需保留 5 年，且將匿名化處理（不再與特定混淆 ID 關聯）。
+                </li>
+                <li><strong>Crashlytics 崩潰日誌</strong>：由 Firebase 收集的日誌將依其政策於 90 天後自動刪除，我們無法手動提前刪除，但這些日誌不包含直接識別您身份的資訊。
+                </li>
+            </ul>
+
+            <h2>聯絡我們</h2>
+            <p>如果您對本隱私政策或資料處理有任何疑問，歡迎透過以下方式與我們聯繫：</p>
+            <ul>
+                <li><strong>電子郵件：project01hk@gmail.com</strong></li>
+            </ul>
+        </div>
+
+        <!-- 英文內容區塊 -->
+        <div id="en" class="lang-en" style="display:none;">
+            <h1>AppSwitcher Privacy Policy & Data Deletion Guide</h1>
+            <p class="last-updated">Last updated: February 24, 2026</p>
+
+            <p>Welcome to AppSwitcher (hereinafter referred to as "the App"). This App is developed by L'Sky
+                (hereinafter referred to as "we", "us", or "our") to provide a floating window for quickly switching
+                between applications. We value your privacy and want to clearly explain how we collect, use, and protect
+                your data.</p>
+
+            <h2>1. Information We Collect</h2>
+            <h3>1.1 Information You Provide Voluntarily</h3>
+            <ul>
+                <li><strong>Purchase Credentials</strong>: When you subscribe to the App via Google Play, we process the
+                    purchase token, order ID, and product ID provided by Google Play to verify subscription validity and
+                    expiration. We do not store your credit card or payment card information.</li>
+                <li><strong>Obfuscated User ID</strong>: To identify your subscription status, we generate a locally
+                    stored obfuscated ID (obfuscatedAccountId) using SHA‑256. This ID is associated with your device but
+                    cannot be traced back to your personal identity. It is transmitted to our server to link
+                    subscription records.</li>
+            </ul>
+
+            <h3>1.2 Automatically Collected Information</h3>
+            <ul>
+                <li><strong>Installed App List</strong>: After you grant permission, we read the list of installed
+                    applications (including app names and package names) on your device so you can select which apps to
+                    include in the switcher. This data is stored only locally and is never uploaded to our server.</li>
+                <li><strong>Crash Logs and Diagnostics</strong>: When the app crashes or encounters an error, we collect
+                    device model, OS version, app version, error stack traces, and crash time via <strong>Firebase
+                        Crashlytics</strong>. This information helps us fix issues and improve stability.</li>
+                <li><strong>Custom Error Events</strong>: Certain critical business errors (e.g., subscription
+                    verification failures) are reported to our own server through our <strong>ErrorReporter</strong>
+                    module. This includes error codes, messages, and basic device information (such as Android version)
+                    to monitor service health.</li>
+                <li><strong>Network Status</strong>: Firebase Crashlytics may collect connection type (Wi‑Fi / mobile
+                    data) to analyze crash contexts.</li>
+            </ul>
+
+            <h3>1.3 Information Collected by Third‑Party SDKs</h3>
+            <ul>
+                <li><strong>Google Play Billing Library</strong>: Used to handle subscription purchases. It collects
+                    purchase tokens, order IDs, and subscription status. For details, see <a
+                        href="https://policies.google.com/privacy" target="_blank">Google’s Privacy Policy</a>.</li>
+                <li><strong>Firebase Crashlytics</strong>: Used for crash reporting. It may collect device identifiers
+                    (e.g., Android ID), crash logs, and diagnostic information. See the <a
+                        href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>
+                    for more.</li>
+                <li><strong>OkHttp / Retrofit</strong>: Used to communicate with our server for subscription
+                    verification and error logging. All connections are encrypted via HTTPS.</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+            <ul>
+                <li>Provide core functionality: quickly switch between apps based on your selected list.</li>
+                <li>Process subscriptions: verify purchases, manage subscription status (including the 18‑day free
+                    trial), and prevent fraud.</li>
+                <li>Improve the app: analyze crashes and errors to optimize user experience.</li>
+                <li>Customer support: if you contact us by email, we may use the information you provide to assist you.
+                </li>
+            </ul>
+
+            <h2>3. Information Sharing</h2>
+            <p>We share your information only in the following circumstances:</p>
+            <ul>
+                <li><strong>Google</strong>: Necessary information (such as purchase tokens, crash logs) is shared with
+                    Google through Google Play Billing and Firebase Crashlytics.</li>
+                <li><strong>Our own servers</strong>: Subscription verification requests and error logs are transmitted
+                    to our servers (located in Hong Kong) for the purposes stated above.</li>
+                <li><strong>Legal requirements</strong>: We may disclose information if required by law or in response
+                    to valid requests by public authorities.</li>
+            </ul>
+            <p>We do not sell, rent, or trade your personal information to any third party for marketing purposes.</p>
+
+            <h2>4. Data Retention</h2>
+            <ul>
+                <li><strong>Locally stored data</strong>: Your selected app list and preferences are stored only on your
+                    device. You can delete this information by clearing app data or uninstalling the app.</li>
+                <li><strong>Server subscription records</strong>: Subscription data associated with your obfuscated ID
+                    (e.g., purchase tokens, expiry dates, subscription status) is retained while your subscription is
+                    active. If you cancel your subscription or request deletion, we will delete or anonymize these
+                    records within 30 days. However, transaction records (e.g., order IDs) may need to be retained for 5
+                    years for tax and anti‑fraud purposes, and will no longer be used for any other purpose.</li>
+                <li><strong>Crash logs</strong>: Logs collected via Firebase Crashlytics are automatically deleted after
+                    90 days. Error logs on our own servers are also anonymized after 90 days.</li>
+            </ul>
+
+            <h2>5. Your Rights</h2>
+            <ul>
+                <li><strong>Access and Deletion</strong>: You can request access to or deletion of your personal data
+                    stored on our servers by emailing us (see below). Note that certain transaction records may be
+                    retained as required by law.</li>
+                <li><strong>Manage Permissions</strong>: You can manage floating window permission and app list access
+                    through your device’s Settings → Apps → AppSwitcher → Permissions.</li>
+                <li><strong>Stop Using</strong>: You can stop all data collection by uninstalling the app. Local data
+                    will be removed, and server data will be handled according to the retention policy above, unless you
+                    make a separate deletion request.</li>
+            </ul>
+
+            <h2>6. Children’s Privacy</h2>
+            <p>This app is not intended for children under the age of 13. We do not knowingly collect personal
+                information from children under 13. If we become aware that we have inadvertently collected such
+                information, we will delete it immediately.</p>
+
+            <h2>7. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. If we make material changes, we will notify you
+                through an in‑app notice or upon the next release. We encourage you to review this page periodically for
+                the latest information.</p>
+
+            <hr>
+
+            <h1 id="data-deletion">Data Deletion Request Guide</h1>
+            <p>Under applicable laws (such as GDPR, CCPA), you have the right to request the deletion of your personal
+                data stored by us. Because the app does not offer traditional user accounts, please follow these steps
+                to make a request:</p>
+
+            <h2>Step 1: Prepare Information</h2>
+            <p>To help us locate your data quickly, please gather the following (if available):</p>
+            <ul>
+                <li><strong>Obfuscated User ID</strong>: This ID is generated locally by the app. You can contact us for
+                    assistance in retrieving it (it may be found in app logs or through debugging).</li>
+                <li><strong>The approximate date you first used the app</strong> (e.g., month and year).</li>
+                <li><strong>The last time you subscribed or used the app</strong> (optional, but helpful).</li>
+            </ul>
+
+            <h2>Step 2: Send an Email</h2>
+            <p>Send the above information to the following email address:</p>
+            <p class="email">project01hk@gmail.com</p>
+            <p>Please use the subject line: <strong>"Data Deletion Request - AppSwitcher"</strong> and clearly state
+                that you want your personal data deleted.</p>
+
+            <h2>Step 3: Processing Timeline</h2>
+            <p>We will process your request within <strong>30 days</strong> of receipt and confirm the deletion by
+                email. If we need to extend this period (e.g., due to complexity), we will notify you.</p>
+
+            <h2>Scope of Deletion and Exceptions</h2>
+            <p>We will delete the following data associated with you:</p>
+            <ul>
+                <li>Obfuscated user ID and linked subscription records (including active/expired/trial status).</li>
+                <li>Error logs stored on our servers that contain your specific ID.</li>
+            </ul>
+            <p>However, the following data may be retained due to legal or compliance reasons:</p>
+            <ul>
+                <li><strong>Transaction records</strong>: Purchase tokens, order IDs, and transaction times related to
+                    Google Play billing may need to be retained for 5 years for tax and anti‑fraud purposes, and will be
+                    anonymized (no longer linked to your obfuscated ID).</li>
+                <li><strong>Crashlytics logs</strong>: Logs collected by Firebase are automatically deleted after 90
+                    days according to their policy; we cannot manually delete them early, but they do not contain direct
+                    personal identifiers.</li>
+            </ul>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+            <ul>
+                <li><strong>Email: project01hk@gmail.com</strong></li>
+            </ul>
+        </div>
+
         <script>
-            // 简单的显示切换
+            // 语言切换脚本
             const hash = window.location.hash;
-            if (hash === '#en') {
-                document.querySelector('.lang-zh').style.display = 'none';
-                document.querySelector('.lang-en').style.display = 'block';
-            } else {
-                document.querySelector('.lang-zh').style.display = 'block';
-                document.querySelector('.lang-en').style.display = 'none';
+            const zhDiv = document.querySelector('.lang-zh');
+            const enDiv = document.querySelector('.lang-en');
+
+            function switchLanguage(lang) {
+                if (lang === 'en') {
+                    zhDiv.style.display = 'none';
+                    enDiv.style.display = 'block';
+                } else {
+                    zhDiv.style.display = 'block';
+                    enDiv.style.display = 'none';
+                }
             }
+
+            if (hash === '#en') {
+                switchLanguage('en');
+            } else {
+                switchLanguage('zh');
+            }
+
+            // 监听hash变化（当点击链接时）
+            window.addEventListener('hashchange', function () {
+                const newHash = window.location.hash;
+                if (newHash === '#en') {
+                    switchLanguage('en');
+                } else {
+                    switchLanguage('zh');
+                }
+            });
         </script>
 
-        <p>歡迎使用 轉App快 （AppSwitcher）（以下簡稱「本應用」）。本應用由L'Sky
-            以下簡稱「我們」）開發，提供快速切換應用程式的懸浮視窗功能。我們非常重視您的隱私，並希望透過本文件清楚說明我們如何收集、使用及保護您的資料。</p>
-
-        <h2>1. 我們收集的資訊</h2>
-        <h3>1.1 您主動提供的資訊</h3>
-        <ul>
-            <li><strong>購買憑證</strong>：當您透過 Google Play 訂閱本應用時，我們會處理由 Google Play 提供的購買權杖（purchase token）、訂單編號及商品
-                ID，以驗證訂閱有效性及到期日。我們不會儲存您的信用卡或付款卡資訊。</li>
-            <li><strong>混淆使用者 ID</strong>：為識別您的訂閱狀態，我們會在本機產生一個經 SHA-256 處理的匿名混淆 ID（obfuscatedAccountId），此 ID
-                與您裝置相關，但無法反向識別您的個人身份。該 ID 會傳送至我們的伺服器，用於關聯訂閱記錄。</li>
-        </ul>
-
-        <h3>1.2 自動收集的資訊</h3>
-        <ul>
-            <li><strong>應用列表</strong>：為讓您選擇要快速切換的應用程式，我們會在您授權後讀取您裝置上已安裝的應用程式清單（包括應用名稱和套件名稱）。此資料僅儲存於本機，不會上傳至伺服器。</li>
-            <li><strong>崩潰日誌與診斷資訊</strong>：當應用程式發生錯誤或崩潰時，我們透過 <strong>Firebase Crashlytics</strong>
-                收集裝置型號、作業系統版本、應用版本、錯誤堆疊及崩潰時間。這些資訊用於協助我們修復問題及改善穩定性。</li>
-            <li><strong>自訂錯誤事件</strong>：部分關鍵業務錯誤（如訂閱驗證失敗）會透過我們自己的 <strong>ErrorReporter</strong>
-                模組上報至我們的伺服器，包含錯誤代碼、訊息及裝置基本資訊（如 Android 版本），以利監控服務健康度。</li>
-            <li><strong>網路狀態</strong>：Firebase Crashlytics 可能收集連線類型（Wi-Fi/行動網路）以分析崩潰情境。</li>
-        </ul>
-
-        <h3>1.3 第三方 SDK 收集的資訊</h3>
-        <ul>
-            <li><strong>Google Play Billing Library</strong>：用於處理訂閱購買，會收集購買權杖、訂單 ID 及訂閱狀態。詳細資料處理請參閱 <a
-                    href="https://policies.google.com/privacy" target="_blank">Google 隱私權政策</a>。</li>
-            <li><strong>Firebase Crashlytics</strong>：用於崩潰報告，可能收集裝置標識符（如 Android ID）、崩潰日誌及診斷資訊。詳情請見 <a
-                    href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隱私權政策</a>。</li>
-            <li><strong>OkHttp / Retrofit</strong>：用於與我們的伺服器通訊，傳輸訂閱驗證、錯誤日誌等資料，所有連線均使用 HTTPS 加密。</li>
-        </ul>
-
-        <h2>2. 資訊使用目的</h2>
-        <ul>
-            <li>提供核心功能：根據您選擇的應用程式清單，在懸浮視窗中快速切換。</li>
-            <li>處理訂閱：驗證購買、管理訂閱狀態（包含 18 天免費試用）、防止欺詐。</li>
-            <li>改善應用：分析崩潰與錯誤，優化使用者體驗。</li>
-            <li>客戶支援：如果您透過電子郵件與我們聯絡，我們可能使用您提供的資訊協助解決問題。</li>
-        </ul>
-
-        <h2>3. 資訊共享</h2>
-        <p>我們僅在以下情況與第三方共享您的資訊：</p>
-        <ul>
-            <li><strong>Google</strong>：透過 Google Play 計費服務及 Firebase Crashlytics 與 Google 共享必要資訊（如購買憑證、崩潰日誌）。</li>
-            <li><strong>自有伺服器</strong>：訂閱驗證請求和錯誤日誌會傳輸至我們自己的伺服器（位於香港），僅用於上述目的。</li>
-            <li><strong>法律要求</strong>：如有法律規定或政府機關合法要求，我們可能揭露必要資訊。</li>
-        </ul>
-        <p>我們不會將您的個人資訊出售、出租或交易給任何第三方用於行銷目的。</p>
-
-        <h2>4. 資料保留</h2>
-        <ul>
-            <li><strong>本機儲存資料</strong>：您選擇的應用程式清單、設定偏好僅儲存在您的裝置上。您可以透過清除應用程式資料或解除安裝來刪除這些資訊。</li>
-            <li><strong>伺服器訂閱記錄</strong>：與您的混淆 ID 關聯的訂閱狀態（如購買權杖、到期日、訂閱狀態）會在您持續訂閱期間保留。若您取消訂閱或要求刪除，我們將於 30
-                天內刪除或匿名化這些記錄，但為符合稅務及反欺詐要求，交易記錄（如訂單編號）可能需保留 5 年，且不再用於任何其他目的。</li>
-            <li><strong>崩潰日誌</strong>：透過 Firebase Crashlytics 收集的日誌將於 90 天後自動刪除。我們自有伺服器的錯誤日誌亦保留 90 天後匿名化。</li>
-        </ul>
-
-        <h2>5. 您的權利</h2>
-        <ul>
-            <li><strong>存取與刪除</strong>：您可以隨時透過下方電子郵件要求查閱或刪除我們伺服器上與您相關的個人資料（如混淆 ID 及訂閱記錄）。請注意，我們可能因法律義務保留特定交易記錄。</li>
-            <li><strong>管理權限</strong>：您可以透過裝置的「設定」→「應用程式」→「AppSwitcher」→「權限」來管理懸浮視窗、應用程式列表等權限。</li>
-            <li><strong>停止使用</strong>：您可以透過解除安裝應用程式停止所有資料收集。解除安裝後，本機資料將被移除，但伺服器上的資料將依上述保留政策處理，除非您另行提出刪除請求。</li>
-        </ul>
-
-        <h2>6. 兒童隱私</h2>
-        <p>本應用不適用於未滿 13 歲之兒童，我們也不會蓄意收集兒童的個人資料。若我們發現誤收集兒童資訊，將立即刪除。</p>
-
-        <h2>7. 隱私政策更新</h2>
-        <p>我們可能會不時更新本隱私政策。重大變更時，我們會透過應用程式內通知或新版發布時提醒您。建議您定期查閱本頁面以瞭解最新內容。</p>
-
-        <hr>
-
-        <h1 id="data-deletion">資料刪除請求指南</h1>
-        <p>根據適用法律（如 GDPR、CCPA），您有權要求刪除我們儲存的與您相關的個人資料。由於本應用不提供傳統的使用者帳戶登入，請依下列步驟提出請求：</p>
-
-        <h2>步驟 1：準備資訊</h2>
-        <p>為協助我們快速定位您的資料，請準備以下資訊（如有）：</p>
-        <ul>
-            <li><strong>混淆使用者 ID</strong>：此 ID 由應用自動產生並儲存於本機。您可透過聯絡我們，我們將引導您取得該 ID（通常在應用程式內部日誌或透過除錯方式）。</li>
-            <li><strong>您首次使用本應用的大致日期</strong>（例如月份與年份）</li>
-            <li><strong>您最後一次訂閱或使用應用的時間</strong>（選擇性，但有助於加速處理）</li>
-        </ul>
-
-        <h2>步驟 2：發送電子郵件</h2>
-        <p>請將上述資訊寄至以下信箱：</p>
-        <p class="email">📧 project01hk@gmail.com</p>
-        <p>郵件主旨請註明 <strong>「資料刪除請求 - AppSwitcher」</strong>，並在內文中清楚說明您希望刪除個人資料。</p>
-
-        <h2>步驟 3：處理時程</h2>
-        <p>我們將在收到請求後的 <strong>30 天內</strong>處理您的請求，並透過電子郵件回覆確認刪除結果。若需延長處理時間（例如因請求複雜），我們會主動通知您。</p>
-
-        <h2>資料刪除範圍與例外</h2>
-        <p>我們將刪除以下與您相關的資料：</p>
-        <ul>
-            <li>混淆使用者 ID 及其關聯的訂閱狀態（包括有效/過期/試用記錄）</li>
-            <li>儲存在我們伺服器上的錯誤日誌（如有您特定 ID 的記錄）</li>
-        </ul>
-        <p>但請注意，下列資料可能因法律或合規原因無法立即刪除：</p>
-        <ul>
-            <li><strong>交易記錄</strong>：為符合稅務及反欺詐要求，與 Google Play 結算相關的購買權杖、訂單編號及交易時間可能需保留 5 年，且將匿名化處理（不再與特定混淆 ID 關聯）。
-            </li>
-            <li><strong>Crashlytics 崩潰日誌</strong>：由 Firebase 收集的日誌將依其政策於 90 天後自動刪除，我們無法手動提前刪除，但這些日誌不包含直接識別您身份的資訊。</li>
-        </ul>
-
-        <h2>聯絡我們</h2>
-        <p>如果您對本隱私政策或資料處理有任何疑問，歡迎透過以下方式與我們聯繫：</p>
-        <ul>
-            <li><strong>電子郵件：project01hk@gmail.com</strong>></li>
-        </ul>
-
-        <p style="margin-top: 40px; font-size: 0.9em; color: #777;">© 2026 AppSwitcher. 保留一切權利。</p>
+        <p style="margin-top: 40px; font-size: 0.9em; color: #777;">© 2026 AppSwitcher. 保留一切權利 / All rights reserved.
+        </p>
     </div>
 </body>
 
