@@ -93,7 +93,7 @@
         <!-- 繁體中文內容區塊 -->
         <div id="zh" class="lang-zh">
             <h1>AppSwitcher 隱私政策與資料刪除指南</h1>
-            <p class="last-updated">最後更新日期：2026年2月24日</p>
+            <p class="last-updated">最後更新日期：2026年5月18日</p>
 
             <p>歡迎使用 轉App快 （AppSwitcher）（以下簡稱「本應用」）。本應用由L'Sky
                 以下簡稱「我們」）開發，提供快速切換應用程式的懸浮視窗功能。我們非常重視您的隱私，並希望透過本文件清楚說明我們如何收集、使用及保護您的資料。</p>
@@ -101,6 +101,9 @@
             <h2>1. 我們收集的資訊</h2>
             <h3>1.1 您主動提供的資訊</h3>
             <ul>
+                <li><strong>Google 登入資訊</strong>：您可以選擇使用 Google 帳號登入本應用，以便同步訂閱狀態。登入時，我們會請求取得您的 Google 帳號 ID
+                    及電子郵件地址。這些資訊會經過 SHA-256 處理生成匿名的混淆
+                    ID（obfuscatedAccountId），並儲存於本機與我們的伺服器，用於關聯您的訂閱記錄。我們不會儲存或分享您的明文密碼或完整電子郵件地址。</li>
                 <li><strong>購買憑證</strong>：當您透過 Google Play 訂閱本應用時，我們會處理由 Google Play 提供的購買權杖（purchase token）、訂單編號及商品
                     ID，以驗證訂閱有效性及到期日。我們不會儲存您的信用卡或付款卡資訊。</li>
                 <li><strong>混淆使用者 ID</strong>：為識別您的訂閱狀態，我們會在本機產生一個經 SHA-256 處理的匿名混淆 ID（obfuscatedAccountId），此 ID
@@ -126,10 +129,14 @@
                 <li><strong>OkHttp / Retrofit</strong>：用於與我們的伺服器通訊，傳輸訂閱驗證、錯誤日誌等資料，所有連線均使用 HTTPS 加密。</li>
             </ul>
 
+            <h3>1.4 如何取得您的混淆 ID 與購買憑證</h3>
+            <p>您可以在本應用「設定」頁面中查看您的匿名混淆 ID（obfuscatedAccountId）以及與訂閱相關的購買權杖（purchase
+                token）。這些資訊可以協助您向我們提出支援請求或資料刪除請求時快速定位您的資料。</p>
+
             <h2>2. 資訊使用目的</h2>
             <ul>
                 <li>提供核心功能：根據您選擇的應用程式清單，在懸浮視窗中快速切換。</li>
-                <li>處理訂閱：驗證購買、管理訂閱狀態（包含 18 天免費試用）、防止欺詐。</li>
+                <li>處理訂閱：驗證購買、管理訂閱狀態（包含 7天免費試用）、防止欺詐。</li>
                 <li>改善應用：分析崩潰與錯誤，優化使用者體驗。</li>
                 <li>客戶支援：如果您透過電子郵件與我們聯絡，我們可能使用您提供的資訊協助解決問題。</li>
             </ul>
@@ -172,7 +179,7 @@
             <h2>步驟 1：準備資訊</h2>
             <p>為協助我們快速定位您的資料，請準備以下資訊（如有）：</p>
             <ul>
-                <li><strong>混淆使用者 ID</strong>：此 ID 由應用自動產生並儲存於本機。您可透過聯絡我們，我們將引導您取得該 ID（通常在應用程式內部日誌或透過除錯方式）。</li>
+                <li><strong>混淆使用者 ID</strong>：您可在本應用的「設定」頁面中查看到您的混淆 ID。若無法取得，亦可透過下方電子郵件聯絡我們，我們將協助您找回。</li>
                 <li><strong>您首次使用本應用的大致日期</strong>（例如月份與年份）</li>
                 <li><strong>您最後一次訂閱或使用應用的時間</strong>（選擇性，但有助於加速處理）</li>
             </ul>
@@ -209,7 +216,7 @@
         <!-- 英文內容區塊 -->
         <div id="en" class="lang-en" style="display:none;">
             <h1>AppSwitcher Privacy Policy & Data Deletion Guide</h1>
-            <p class="last-updated">Last updated: February 24, 2026</p>
+            <p class="last-updated">Last updated: May 18, 2026</p>
 
             <p>Welcome to AppSwitcher (hereinafter referred to as "the App"). This App is developed by L'Sky
                 (hereinafter referred to as "we", "us", or "our") to provide a floating window for quickly switching
@@ -219,6 +226,11 @@
             <h2>1. Information We Collect</h2>
             <h3>1.1 Information You Provide Voluntarily</h3>
             <ul>
+                <li><strong>Google Sign-In Information</strong>: You may choose to sign in with your Google account to
+                    sync subscription status. When you sign in, we request your Google account ID and email address.
+                    These are processed with SHA-256 to generate an anonymous obfuscated ID (obfuscatedAccountId) stored
+                    locally and on our server, used to link your subscription records. We do not store or share your
+                    plaintext password or full email address.</li>
                 <li><strong>Purchase Credentials</strong>: When you subscribe to the App via Google Play, we process the
                     purchase token, order ID, and product ID provided by Google Play to verify subscription validity and
                     expiration. We do not store your credit card or payment card information.</li>
@@ -257,10 +269,15 @@
                     verification and error logging. All connections are encrypted via HTTPS.</li>
             </ul>
 
+            <h3>1.4 How to Obtain Your Obfuscated ID and Purchase Token</h3>
+            <p>You can view your anonymous obfuscated ID (obfuscatedAccountId) and the subscription purchase token in
+                the app’s “Settings” page. This information can help you quickly identify your data when contacting
+                support or requesting data deletion.</p>
+
             <h2>2. How We Use Your Information</h2>
             <ul>
                 <li>Provide core functionality: quickly switch between apps based on your selected list.</li>
-                <li>Process subscriptions: verify purchases, manage subscription status (including the 18‑day free
+                <li>Process subscriptions: verify purchases, manage subscription status (including the 7‑day free
                     trial), and prevent fraud.</li>
                 <li>Improve the app: analyze crashes and errors to optimize user experience.</li>
                 <li>Customer support: if you contact us by email, we may use the information you provide to assist you.
@@ -324,8 +341,8 @@
             <h2>Step 1: Prepare Information</h2>
             <p>To help us locate your data quickly, please gather the following (if available):</p>
             <ul>
-                <li><strong>Obfuscated User ID</strong>: This ID is generated locally by the app. You can contact us for
-                    assistance in retrieving it (it may be found in app logs or through debugging).</li>
+                <li><strong>Obfuscated User ID</strong>: You can find your obfuscated ID in the app’s “Settings” page.
+                    If you are unable to access it, please contact us for assistance.</li>
                 <li><strong>The approximate date you first used the app</strong> (e.g., month and year).</li>
                 <li><strong>The last time you subscribed or used the app</strong> (optional, but helpful).</li>
             </ul>
