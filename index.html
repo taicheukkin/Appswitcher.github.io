@@ -95,10 +95,8 @@
             <h1>AppSwitcher 隱私政策與資料刪除指南</h1>
             <p class="last-updated">最後更新日期：2026年5月25日</p>
 
-            <p>歡迎使用 轉App快
-                （AppSwitcher）（以下簡稱「本應用」）。本應用由Aelius Manufacture
-                Group（以下簡稱「我們」）開發，提供快速切換應用程式的懸浮視窗功能。我們非常重視您的隱私，並希望透過本文件清楚說明我們如何收集、使用及保護您的資料。
-            </p>
+            <p>歡迎使用 轉App快（AppSwitcher）（以下簡稱「本應用」）。本應用由Aelius Manufacture
+                Group（以下簡稱「我們」）開發，提供快速切換應用程式的懸浮視窗功能。我們非常重視您的隱私，並希望透過本文件清楚說明我們如何收集、使用及保護您的資料。</p>
 
             <h2>1. 我們收集的資訊</h2>
             <h3>1.1 您主動提供的資訊</h3>
@@ -131,6 +129,10 @@
                         href="https://policies.google.com/privacy" target="_blank">Google 隱私權政策</a>。</li>
                 <li><strong>Firebase Crashlytics</strong>：用於崩潰報告，可能收集裝置標識符（如 Android ID）、崩潰日誌及診斷資訊。詳情請見 <a
                         href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隱私權政策</a>。</li>
+                <li><strong>Google AdMob</strong>：用於展示插屏廣告。AdMob 會收集 Android 廣告 ID (AAID)、IP
+                    位址（用於推斷概略位置）及廣告互動資料（如曝光、點擊）。詳情請見 <a href="https://policies.google.com/privacy"
+                        target="_blank">Google 隱私權政策</a>。</li>
+                <li><strong>Firebase Cloud Messaging (FCM)</strong>：用於推送通知。會收集 FCM 註冊令牌，以便向您的裝置發送訂閱到期或帳號相關訊息。</li>
                 <li><strong>OkHttp / Retrofit</strong>：用於與我們的伺服器通訊，傳輸訂閱驗證、錯誤日誌等資料，所有連線均使用 HTTPS 加密。</li>
             </ul>
 
@@ -143,6 +145,8 @@
                 <li>提供核心功能：根據您選擇的應用程式清單，在懸浮視窗中快速切換。</li>
                 <li>處理訂閱：驗證購買、管理訂閱狀態（包含 7天免費試用）、防止欺詐。</li>
                 <li>設備衝突檢測：使用 deviceId 避免同一帳號在多台裝置同時使用服務。</li>
+                <li>展示廣告：對於非訂閱用戶，我們會顯示 Google AdMob 插屏廣告，以支持應用持續開發。廣告投放可能使用您的概略位置及廣告 ID。</li>
+                <li>推送通知：使用 FCM 令牌向您發送重要服務通知（如訂閱即將到期、帳號強制登出）。</li>
                 <li>改善應用：分析崩潰與錯誤，優化使用者體驗。</li>
                 <li>客戶支援：如果您透過電子郵件與我們聯絡，我們可能使用您提供的資訊協助解決問題。</li>
             </ul>
@@ -150,8 +154,9 @@
             <h2>3. 資訊共享</h2>
             <p>我們僅在以下情況與第三方共享您的資訊：</p>
             <ul>
-                <li><strong>Google</strong>：透過 Google Play 計費服務及 Firebase Crashlytics 與 Google 共享必要資訊（如購買憑證、崩潰日誌）。</li>
-                <li><strong>自有伺服器</strong>：訂閱驗證請求和錯誤日誌會傳輸至我們自己的伺服器（位於香港），僅用於上述目的。</li>
+                <li><strong>Google</strong>：透過 Google Play 計費服務、AdMob、Firebase Crashlytics 及 Firebase Cloud Messaging 與
+                    Google 共享必要資訊（如購買憑證、廣告 ID、崩潰日誌、FCM 令牌）。</li>
+                <li><strong>自有伺服器</strong>：訂閱驗證請求、錯誤日誌及 deviceId 會傳輸至我們自己的伺服器（位於香港），僅用於上述目的。</li>
                 <li><strong>法律要求</strong>：如有法律規定或政府機關合法要求，我們可能揭露必要資訊。</li>
             </ul>
             <p>我們不會將您的個人資訊出售、出租或交易給任何第三方用於行銷目的。</p>
@@ -163,6 +168,8 @@
                     天內刪除或匿名化這些記錄，但為符合稅務及反欺詐要求，交易記錄（如訂單編號）可能需保留 5 年，且不再用於任何其他目的。</li>
                 <li><strong>設備識別碼 (deviceId)</strong>：只要您的帳號未被刪除，deviceId 會與您的混淆 ID 關聯儲存。一旦您透過 App
                     內「刪除帳號」功能提出請求，我們將立即刪除您帳號下所有關聯的 deviceId 記錄。</li>
+                <li><strong>FCM 令牌保留</strong>：只要您登入應用程式且未主動刪除帳號，您的 FCM 令牌會保留在我們的伺服器及 Firebase
+                    中。一旦您登出、刪除帳號或解除安裝應用程式，該令牌將被清除或標示為失效。</li>
                 <li><strong>崩潰日誌</strong>：透過 Firebase Crashlytics 收集的日誌將於 90 天後自動刪除。我們自有伺服器的錯誤日誌亦保留 90 天後匿名化。</li>
             </ul>
 
@@ -174,6 +181,10 @@
                 <li><strong>管理權限</strong>：您可以透過裝置的「設定」→「應用程式」→「AppSwitcher」→「權限」來管理懸浮視窗、應用程式列表等權限。</li>
                 <li><strong>停止使用</strong>：您可以透過解除安裝應用程式停止所有資料收集。解除安裝後，本機資料將被移除，但伺服器上的資料將依上述保留政策處理，除非您透過 App
                     內刪除帳號功能主動請求刪除。</li>
+                <li><strong>廣告同意管理</strong>：我們使用 Google User Messaging Platform (UMP)
+                    在首次啟動時徵求您的廣告同意。您可隨時在「設定」頁面點擊「隱私選項」按鈕，修改個人化廣告的同意狀態。</li>
+                <li><strong>控制廣告 ID</strong>：您可以透過 Android 裝置的「設定」→「Google」→「廣告」來重置您的廣告 ID 或啟用「限制廣告追蹤」。啟用限制後，AdMob
+                    仍可能展示非個人化廣告，但不會使用您的興趣資料。</li>
             </ul>
 
             <h2>6. 兒童隱私</h2>
@@ -207,10 +218,9 @@
             <p class="last-updated">Last updated: May 25, 2026</p>
 
             <p>Welcome to AppSwitcher (hereinafter referred to as "the App"). This App is developed by Aelius
-                Manufacture Group
-                (hereinafter referred to as "we", "us", or "our") to provide a floating window for quickly switching
-                between applications. We value your privacy and want to clearly explain how we collect, use, and protect
-                your data.</p>
+                Manufacture Group (hereinafter referred to as "we", "us", or "our") to provide a floating window for
+                quickly switching between applications. We value your privacy and want to clearly explain how we
+                collect, use, and protect your data.</p>
 
             <h2>1. Information We Collect</h2>
             <h3>1.1 Information You Provide Voluntarily</h3>
@@ -259,6 +269,13 @@
                     (e.g., Android ID), crash logs, and diagnostic information. See the <a
                         href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>
                     for more.</li>
+                <li><strong>Google AdMob</strong>: Used to display interstitial ads. AdMob collects Android Advertising
+                    ID (AAID), IP address (to infer approximate location), and ad interaction data (impressions,
+                    clicks). See <a href="https://policies.google.com/privacy" target="_blank">Google’s Privacy
+                        Policy</a>.</li>
+                <li><strong>Firebase Cloud Messaging (FCM)</strong>: Used for push notifications. It collects FCM
+                    registration tokens to send you important service messages (e.g., subscription expiration, account
+                    logout).</li>
                 <li><strong>OkHttp / Retrofit</strong>: Used to communicate with our server for subscription
                     verification and error logging. All connections are encrypted via HTTPS.</li>
             </ul>
@@ -275,6 +292,10 @@
                     trial), and prevent fraud.</li>
                 <li>Device conflict detection: use deviceId to prevent the same account from being used on multiple
                     devices simultaneously.</li>
+                <li>Display ads: for non‑subscribers, we show Google AdMob interstitial ads to support ongoing
+                    development. Ad serving may use your approximate location and advertising ID.</li>
+                <li>Push notifications: use FCM tokens to send important service alerts (e.g., subscription expiration,
+                    forced logout).</li>
                 <li>Improve the app: analyze crashes and errors to optimize user experience.</li>
                 <li>Customer support: if you contact us by email, we may use the information you provide to assist you.
                 </li>
@@ -283,10 +304,11 @@
             <h2>3. Information Sharing</h2>
             <p>We share your information only in the following circumstances:</p>
             <ul>
-                <li><strong>Google</strong>: Necessary information (such as purchase tokens, crash logs) is shared with
-                    Google through Google Play Billing and Firebase Crashlytics.</li>
-                <li><strong>Our own servers</strong>: Subscription verification requests and error logs are transmitted
-                    to our servers (located in Hong Kong) for the purposes stated above.</li>
+                <li><strong>Google</strong>: Necessary information (such as purchase tokens, advertising ID, crash logs,
+                    FCM tokens) is shared with Google through Google Play Billing, AdMob, Firebase Crashlytics, and
+                    Firebase Cloud Messaging.</li>
+                <li><strong>Our own servers</strong>: Subscription verification requests, error logs, and deviceId are
+                    transmitted to our servers (located in Hong Kong) for the purposes stated above.</li>
                 <li><strong>Legal requirements</strong>: We may disclose information if required by law or in response
                     to valid requests by public authorities.</li>
             </ul>
@@ -305,6 +327,9 @@
                     remains associated with your obfuscated account ID. Once you request deletion via the in-app “Delete
                     Account” function, we will immediately delete all deviceId records associated with your account.
                 </li>
+                <li><strong>FCM token retention</strong>: As long as you are logged in and have not deleted your
+                    account, your FCM token is retained on our server and in Firebase. When you log out, delete your
+                    account, or uninstall the app, the token will be cleared or marked invalid.</li>
                 <li><strong>Crash logs</strong>: Logs collected via Firebase Crashlytics are automatically deleted after
                     90 days. Error logs on our own servers are also anonymized after 90 days.</li>
             </ul>
@@ -315,13 +340,18 @@
                     <strong>Settings</strong> page in the App and tapping the "<strong>Delete Account</strong>" button.
                     This will immediately send a deletion request to our server, removing your obfuscated ID, device
                     identifier, and linked subscription records. Please note that certain transaction records (e.g.,
-                    order IDs) may be retained in anonymized form for legal compliance.
-                </li>
+                    order IDs) may be retained in anonymized form for legal compliance.</li>
                 <li><strong>Manage Permissions</strong>: You can manage floating window permission and app list access
                     through your device’s Settings → Apps → AppSwitcher → Permissions.</li>
                 <li><strong>Stop Using</strong>: You can stop all data collection by uninstalling the app. Local data
                     will be removed, and server data will be handled according to the retention policy above, unless you
                     actively request deletion via the in-app “Delete Account” feature.</li>
+                <li><strong>Ad Consent Management</strong>: We use Google User Messaging Platform (UMP) to ask for your
+                    advertising consent on first launch. You can change your personalized ad consent at any time by
+                    tapping the “Privacy Options” button in the Settings page.</li>
+                <li><strong>Control Advertising ID</strong>: You can reset your advertising ID or enable “Limit Ad
+                    Tracking” via your device’s Settings → Google → Ads. Enabling limits will cause AdMob to show only
+                    non‑personalized ads (no interest‑based data used).</li>
             </ul>
 
             <h2>6. Children’s Privacy</h2>
@@ -350,7 +380,7 @@
                 obfuscated ID, device identifier, and associated data will be permanently removed from our servers
                 (except for anonymized transaction records required by law).</p>
 
-            <h2>Contact Us</h2>
+            <h2>📧 Contact Us</h2>
             <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
             <ul>
                 <li><strong>Email: project01hk@gmail.com</strong> (for general inquiries only, not for data deletion
