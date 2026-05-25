@@ -93,10 +93,12 @@
         <!-- 繁體中文內容區塊 -->
         <div id="zh" class="lang-zh">
             <h1>AppSwitcher 隱私政策與資料刪除指南</h1>
-            <p class="last-updated">最後更新日期：2026年5月18日</p>
+            <p class="last-updated">最後更新日期：2026年5月25日</p>
 
-            <p>歡迎使用 轉App快 （AppSwitcher）（以下簡稱「本應用」）。本應用由L'Sky
-                以下簡稱「我們」）開發，提供快速切換應用程式的懸浮視窗功能。我們非常重視您的隱私，並希望透過本文件清楚說明我們如何收集、使用及保護您的資料。</p>
+            <p>歡迎使用 轉App快
+                （AppSwitcher）（以下簡稱「本應用」）。本應用由Aelius Manufacture
+                Group（以下簡稱「我們」）開發，提供快速切換應用程式的懸浮視窗功能。我們非常重視您的隱私，並希望透過本文件清楚說明我們如何收集、使用及保護您的資料。
+            </p>
 
             <h2>1. 我們收集的資訊</h2>
             <h3>1.1 您主動提供的資訊</h3>
@@ -113,6 +115,9 @@
             <h3>1.2 自動收集的資訊</h3>
             <ul>
                 <li><strong>應用列表</strong>：為讓您選擇要快速切換的應用程式，我們會在您授權後讀取您裝置上已安裝的應用程式清單（包括應用名稱和套件名稱）。此資料僅儲存於本機，不會上傳至伺服器。</li>
+                <li><strong>設備識別碼
+                        (deviceId)</strong>：為防止同一帳號在多個裝置上同時使用服務（避免衝突），我們會在您的裝置上產生一個唯一的、經過混淆處理的設備識別碼，並上傳至我們的伺服器。該識別碼與您的混淆帳號
+                    ID 關聯，不會逆向解析出您的真實設備資訊，且僅用於檢查設備衝突及確保服務正常運作。</li>
                 <li><strong>崩潰日誌與診斷資訊</strong>：當應用程式發生錯誤或崩潰時，我們透過 <strong>Firebase Crashlytics</strong>
                     收集裝置型號、作業系統版本、應用版本、錯誤堆疊及崩潰時間。這些資訊用於協助我們修復問題及改善穩定性。</li>
                 <li><strong>自訂錯誤事件</strong>：部分關鍵業務錯誤（如訂閱驗證失敗）會透過我們自己的 <strong>ErrorReporter</strong>
@@ -130,13 +135,14 @@
             </ul>
 
             <h3>1.4 如何取得您的混淆 ID 與購買憑證</h3>
-            <p>您可以在本應用「設定」頁面中查看您的匿名混淆 ID（obfuscatedAccountId）以及與訂閱相關的購買權杖（purchase
-                token）。這些資訊可以協助您向我們提出支援請求或資料刪除請求時快速定位您的資料。</p>
+            <p>您可以在本應用「設定」頁面中查看您的匿名混淆 ID（obfuscatedAccountId）以及與訂閱相關的購買權杖（purchase token）。這些資訊可以協助您向我們提出支援請求時快速定位您的資料。
+            </p>
 
             <h2>2. 資訊使用目的</h2>
             <ul>
                 <li>提供核心功能：根據您選擇的應用程式清單，在懸浮視窗中快速切換。</li>
                 <li>處理訂閱：驗證購買、管理訂閱狀態（包含 7天免費試用）、防止欺詐。</li>
+                <li>設備衝突檢測：使用 deviceId 避免同一帳號在多台裝置同時使用服務。</li>
                 <li>改善應用：分析崩潰與錯誤，優化使用者體驗。</li>
                 <li>客戶支援：如果您透過電子郵件與我們聯絡，我們可能使用您提供的資訊協助解決問題。</li>
             </ul>
@@ -155,14 +161,19 @@
                 <li><strong>本機儲存資料</strong>：您選擇的應用程式清單、設定偏好僅儲存在您的裝置上。您可以透過清除應用程式資料或解除安裝來刪除這些資訊。</li>
                 <li><strong>伺服器訂閱記錄</strong>：與您的混淆 ID 關聯的訂閱狀態（如購買權杖、到期日、訂閱狀態）會在您持續訂閱期間保留。若您取消訂閱或要求刪除，我們將於 30
                     天內刪除或匿名化這些記錄，但為符合稅務及反欺詐要求，交易記錄（如訂單編號）可能需保留 5 年，且不再用於任何其他目的。</li>
+                <li><strong>設備識別碼 (deviceId)</strong>：只要您的帳號未被刪除，deviceId 會與您的混淆 ID 關聯儲存。一旦您透過 App
+                    內「刪除帳號」功能提出請求，我們將立即刪除您帳號下所有關聯的 deviceId 記錄。</li>
                 <li><strong>崩潰日誌</strong>：透過 Firebase Crashlytics 收集的日誌將於 90 天後自動刪除。我們自有伺服器的錯誤日誌亦保留 90 天後匿名化。</li>
             </ul>
 
             <h2>5. 您的權利</h2>
             <ul>
-                <li><strong>存取與刪除</strong>：您可以隨時透過下方電子郵件要求查閱或刪除我們伺服器上與您相關的個人資料（如混淆 ID 及訂閱記錄）。請注意，我們可能因法律義務保留特定交易記錄。</li>
+                <li><strong>存取與刪除</strong>：您可以隨時在 App
+                    的「設定」頁面點擊「<strong>刪除帳號</strong>」按鈕，系統會立即向我們的伺服器發起刪除請求，將與您相關的個人資料（如混淆
+                    ID、設備識別碼及訂閱記錄）刪除。請注意，我們可能因法律義務保留特定交易記錄（如訂單編號），但這些記錄將匿名化且不再與您關聯。</li>
                 <li><strong>管理權限</strong>：您可以透過裝置的「設定」→「應用程式」→「AppSwitcher」→「權限」來管理懸浮視窗、應用程式列表等權限。</li>
-                <li><strong>停止使用</strong>：您可以透過解除安裝應用程式停止所有資料收集。解除安裝後，本機資料將被移除，但伺服器上的資料將依上述保留政策處理，除非您另行提出刪除請求。</li>
+                <li><strong>停止使用</strong>：您可以透過解除安裝應用程式停止所有資料收集。解除安裝後，本機資料將被移除，但伺服器上的資料將依上述保留政策處理，除非您透過 App
+                    內刪除帳號功能主動請求刪除。</li>
             </ul>
 
             <h2>6. 兒童隱私</h2>
@@ -173,52 +184,30 @@
 
             <hr>
 
-            <h1 id="data-deletion">資料刪除請求指南</h1>
-            <p>根據適用法律（如 GDPR、CCPA），您有權要求刪除我們儲存的與您相關的個人資料。由於本應用不提供傳統的使用者帳戶登入，請依下列步驟提出請求：</p>
+            <h1 id="data-deletion">資料刪除方法（App 內直接刪除）</h1>
+            <p>根據適用法律（如 GDPR、CCPA），您有權要求刪除我們伺服器上儲存的與您相關的個人資料。本應用提供最簡便的刪除方式：</p>
+            <ol>
+                <li>開啟 App 後，點擊主畫面的「<strong>設定</strong>」按鈕（⚙️）。</li>
+                <li>在設定頁面中，找到「<strong>刪除帳號</strong>」按鈕。</li>
+                <li>點擊後，系統會彈出確認對話框，請再次確認刪除操作。</li>
+                <li>確認後，App 會自動向我們的伺服器發送刪除請求，並清除您在本機的所有資料。刪除後，您將被登出，並需重新登入才能使用服務。</li>
+            </ol>
+            <p>請注意：刪除帳號是<strong>不可逆</strong>的操作。一旦刪除，您的訂閱記錄、混淆 ID、設備識別碼及相關資料將從我們的伺服器中永久移除（法律要求保留的匿名化交易記錄除外）。</p>
 
-            <h2>步驟 1：準備資訊</h2>
-            <p>為協助我們快速定位您的資料，請準備以下資訊（如有）：</p>
-            <ul>
-                <li><strong>混淆使用者 ID</strong>：您可在本應用的「設定」頁面中查看到您的混淆 ID。若無法取得，亦可透過下方電子郵件聯絡我們，我們將協助您找回。</li>
-                <li><strong>您首次使用本應用的大致日期</strong>（例如月份與年份）</li>
-                <li><strong>您最後一次訂閱或使用應用的時間</strong>（選擇性，但有助於加速處理）</li>
-            </ul>
-
-            <h2>步驟 2：發送電子郵件</h2>
-            <p>請將上述資訊寄至以下信箱：</p>
-            <p class="email">📧 project01hk@gmail.com</p>
-            <p>郵件主旨請註明 <strong>「資料刪除請求 - AppSwitcher」</strong>，並在內文中清楚說明您希望刪除個人資料。</p>
-
-            <h2>步驟 3：處理時程</h2>
-            <p>我們將在收到請求後的 <strong>30 天內</strong>處理您的請求，並透過電子郵件回覆確認刪除結果。若需延長處理時間（例如因請求複雜），我們會主動通知您。</p>
-
-            <h2>資料刪除範圍與例外</h2>
-            <p>我們將刪除以下與您相關的資料：</p>
-            <ul>
-                <li>混淆使用者 ID 及其關聯的訂閱狀態（包括有效/過期/試用記錄）</li>
-                <li>儲存在我們伺服器上的錯誤日誌（如有您特定 ID 的記錄）</li>
-            </ul>
-            <p>但請注意，下列資料可能因法律或合規原因無法立即刪除：</p>
-            <ul>
-                <li><strong>交易記錄</strong>：為符合稅務及反欺詐要求，與 Google Play 結算相關的購買權杖、訂單編號及交易時間可能需保留 5 年，且將匿名化處理（不再與特定混淆 ID 關聯）。
-                </li>
-                <li><strong>Crashlytics 崩潰日誌</strong>：由 Firebase 收集的日誌將依其政策於 90 天後自動刪除，我們無法手動提前刪除，但這些日誌不包含直接識別您身份的資訊。
-                </li>
-            </ul>
-
-            <h2>聯絡我們</h2>
+            <h2>📧 聯絡我們</h2>
             <p>如果您對本隱私政策或資料處理有任何疑問，歡迎透過以下方式與我們聯繫：</p>
             <ul>
-                <li><strong>電子郵件：project01hk@gmail.com</strong></li>
+                <li><strong>電子郵件：project01hk@gmail.com</strong>（僅用於一般諮詢，不作為資料刪除途徑）</li>
             </ul>
         </div>
 
         <!-- 英文內容區塊 -->
         <div id="en" class="lang-en" style="display:none;">
             <h1>AppSwitcher Privacy Policy & Data Deletion Guide</h1>
-            <p class="last-updated">Last updated: May 18, 2026</p>
+            <p class="last-updated">Last updated: May 25, 2026</p>
 
-            <p>Welcome to AppSwitcher (hereinafter referred to as "the App"). This App is developed by L'Sky
+            <p>Welcome to AppSwitcher (hereinafter referred to as "the App"). This App is developed by Aelius
+                Manufacture Group
                 (hereinafter referred to as "we", "us", or "our") to provide a floating window for quickly switching
                 between applications. We value your privacy and want to clearly explain how we collect, use, and protect
                 your data.</p>
@@ -245,6 +234,11 @@
                 <li><strong>Installed App List</strong>: After you grant permission, we read the list of installed
                     applications (including app names and package names) on your device so you can select which apps to
                     include in the switcher. This data is stored only locally and is never uploaded to our server.</li>
+                <li><strong>Device Identifier (deviceId)</strong>: To prevent the same account from being used
+                    simultaneously on multiple devices (conflict detection), we generate a unique, obfuscated device
+                    identifier on your device and upload it to our server. This identifier is linked to your obfuscated
+                    account ID, cannot be reverse-engineered to reveal your actual device information, and is used
+                    solely for device conflict checking and ensuring proper service operation.</li>
                 <li><strong>Crash Logs and Diagnostics</strong>: When the app crashes or encounters an error, we collect
                     device model, OS version, app version, error stack traces, and crash time via <strong>Firebase
                         Crashlytics</strong>. This information helps us fix issues and improve stability.</li>
@@ -272,13 +266,15 @@
             <h3>1.4 How to Obtain Your Obfuscated ID and Purchase Token</h3>
             <p>You can view your anonymous obfuscated ID (obfuscatedAccountId) and the subscription purchase token in
                 the app’s “Settings” page. This information can help you quickly identify your data when contacting
-                support or requesting data deletion.</p>
+                support.</p>
 
             <h2>2. How We Use Your Information</h2>
             <ul>
                 <li>Provide core functionality: quickly switch between apps based on your selected list.</li>
                 <li>Process subscriptions: verify purchases, manage subscription status (including the 7‑day free
                     trial), and prevent fraud.</li>
+                <li>Device conflict detection: use deviceId to prevent the same account from being used on multiple
+                    devices simultaneously.</li>
                 <li>Improve the app: analyze crashes and errors to optimize user experience.</li>
                 <li>Customer support: if you contact us by email, we may use the information you provide to assist you.
                 </li>
@@ -305,20 +301,27 @@
                     active. If you cancel your subscription or request deletion, we will delete or anonymize these
                     records within 30 days. However, transaction records (e.g., order IDs) may need to be retained for 5
                     years for tax and anti‑fraud purposes, and will no longer be used for any other purpose.</li>
+                <li><strong>Device identifier (deviceId)</strong>: As long as your account is not deleted, the deviceId
+                    remains associated with your obfuscated account ID. Once you request deletion via the in-app “Delete
+                    Account” function, we will immediately delete all deviceId records associated with your account.
+                </li>
                 <li><strong>Crash logs</strong>: Logs collected via Firebase Crashlytics are automatically deleted after
                     90 days. Error logs on our own servers are also anonymized after 90 days.</li>
             </ul>
 
             <h2>5. Your Rights</h2>
             <ul>
-                <li><strong>Access and Deletion</strong>: You can request access to or deletion of your personal data
-                    stored on our servers by emailing us (see below). Note that certain transaction records may be
-                    retained as required by law.</li>
+                <li><strong>Access and Deletion</strong>: You can delete your personal data at any time by going to the
+                    <strong>Settings</strong> page in the App and tapping the "<strong>Delete Account</strong>" button.
+                    This will immediately send a deletion request to our server, removing your obfuscated ID, device
+                    identifier, and linked subscription records. Please note that certain transaction records (e.g.,
+                    order IDs) may be retained in anonymized form for legal compliance.
+                </li>
                 <li><strong>Manage Permissions</strong>: You can manage floating window permission and app list access
                     through your device’s Settings → Apps → AppSwitcher → Permissions.</li>
                 <li><strong>Stop Using</strong>: You can stop all data collection by uninstalling the app. Local data
                     will be removed, and server data will be handled according to the retention policy above, unless you
-                    make a separate deletion request.</li>
+                    actively request deletion via the in-app “Delete Account” feature.</li>
             </ul>
 
             <h2>6. Children’s Privacy</h2>
@@ -333,50 +336,25 @@
 
             <hr>
 
-            <h1 id="data-deletion">Data Deletion Request Guide</h1>
-            <p>Under applicable laws (such as GDPR, CCPA), you have the right to request the deletion of your personal
-                data stored by us. Because the app does not offer traditional user accounts, please follow these steps
-                to make a request:</p>
-
-            <h2>Step 1: Prepare Information</h2>
-            <p>To help us locate your data quickly, please gather the following (if available):</p>
-            <ul>
-                <li><strong>Obfuscated User ID</strong>: You can find your obfuscated ID in the app’s “Settings” page.
-                    If you are unable to access it, please contact us for assistance.</li>
-                <li><strong>The approximate date you first used the app</strong> (e.g., month and year).</li>
-                <li><strong>The last time you subscribed or used the app</strong> (optional, but helpful).</li>
-            </ul>
-
-            <h2>Step 2: Send an Email</h2>
-            <p>Send the above information to the following email address:</p>
-            <p class="email">project01hk@gmail.com</p>
-            <p>Please use the subject line: <strong>"Data Deletion Request - AppSwitcher"</strong> and clearly state
-                that you want your personal data deleted.</p>
-
-            <h2>Step 3: Processing Timeline</h2>
-            <p>We will process your request within <strong>30 days</strong> of receipt and confirm the deletion by
-                email. If we need to extend this period (e.g., due to complexity), we will notify you.</p>
-
-            <h2>Scope of Deletion and Exceptions</h2>
-            <p>We will delete the following data associated with you:</p>
-            <ul>
-                <li>Obfuscated user ID and linked subscription records (including active/expired/trial status).</li>
-                <li>Error logs stored on our servers that contain your specific ID.</li>
-            </ul>
-            <p>However, the following data may be retained due to legal or compliance reasons:</p>
-            <ul>
-                <li><strong>Transaction records</strong>: Purchase tokens, order IDs, and transaction times related to
-                    Google Play billing may need to be retained for 5 years for tax and anti‑fraud purposes, and will be
-                    anonymized (no longer linked to your obfuscated ID).</li>
-                <li><strong>Crashlytics logs</strong>: Logs collected by Firebase are automatically deleted after 90
-                    days according to their policy; we cannot manually delete them early, but they do not contain direct
-                    personal identifiers.</li>
-            </ul>
+            <h1 id="data-deletion">How to Delete Your Data (In-App Method)</h1>
+            <p>Under applicable laws (such as GDPR, CCPA), you have the right to request deletion of your personal data
+                stored on our servers. The app provides a simple, built‑in way to do this:</p>
+            <ol>
+                <li>Open the App and tap the <strong>Settings</strong> button (⚙️) on the main screen.</li>
+                <li>In the Settings page, locate the "<strong>Delete Account</strong>" button.</li>
+                <li>Tap it and confirm the deletion in the dialog that appears.</li>
+                <li>After confirmation, the App will automatically send a deletion request to our server and clear all
+                    local data. You will be logged out and must sign in again to use the service.</li>
+            </ol>
+            <p>Please note: account deletion is <strong>irreversible</strong>. Once deleted, your subscription records,
+                obfuscated ID, device identifier, and associated data will be permanently removed from our servers
+                (except for anonymized transaction records required by law).</p>
 
             <h2>Contact Us</h2>
             <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
             <ul>
-                <li><strong>Email: project01hk@gmail.com</strong></li>
+                <li><strong>Email: project01hk@gmail.com</strong> (for general inquiries only, not for data deletion
+                    requests)</li>
             </ul>
         </div>
 
@@ -402,7 +380,6 @@
                 switchLanguage('zh');
             }
 
-            // 监听hash变化（当点击链接时）
             window.addEventListener('hashchange', function () {
                 const newHash = window.location.hash;
                 if (newHash === '#en') {
